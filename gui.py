@@ -55,13 +55,15 @@ def print_properties(concentration_widgets, output, process_type):
 
         properties = calculate_mechanical_properties(input_dict)
 
-        conc_table = tabulate(print_conc_list, headers=["Element", "Concentration (wt. %)"], tablefmt='html')
+        # Create HTML table rows manually for concentrations
+        conc_rows = "".join([f"<tr><td style='text-align:left;'>{element}</td><td style='text-align:right;'>{conc}</td></tr>" for element, conc in print_conc_list])
+
         display(HTML(
             f"""
             <div style='border:2px solid #000; padding:20px; margin-top:20px;'>
-                <h2 style='color: #005599; '>Element Concentrations:</h2>
+                <h2 style='color: #005599; '>Element Concentrations (wt%):</h2>
                 <table style='width:100%; border-collapse: collapse;'>
-                    {conc_table[20:]}
+                    {conc_rows}
                 </table>
             </div>
             """
