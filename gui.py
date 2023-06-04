@@ -1,7 +1,5 @@
 from IPython.display import display
 from ipywidgets import VBox, HBox, Dropdown, BoundedFloatText, Button, Output
-from joblib import load
-from tabulate import tabulate
 import pandas as pd
 import pickle
 from ipywidgets import HTML
