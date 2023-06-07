@@ -106,7 +106,7 @@ def build_concentration_widget(element):
 
 
 def build_gui():
-    concentration_elements = [element for element in FEATURE_COLUMNS if element != "Processing"]
+    concentration_elements = [element for element in FEATURE_COLUMNS if element != "Processing" and element != "Al"]
     concentration_widgets = [build_concentration_widget(element) for element in concentration_elements]
 
     process_type = Dropdown(
